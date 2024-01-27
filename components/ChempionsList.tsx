@@ -50,7 +50,7 @@ const ChempionsList = ({
     }
   };
 
-  // use effect
+  // use effect.e
   const sendData = async () => {
     const data = user;
     data!.stared = stared;
