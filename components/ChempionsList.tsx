@@ -40,9 +40,8 @@ const ChempionsList = ({
 
   const handleStared = (e: string) => {
     if (!session.data?.user) {
-      return signIn();
+      return signIn("github", { callbackUrl: `${process.env.NEXTAUTH_URL}` });
     }
-
     if (stared.includes(e)) {
       setStared(stared.filter((item) => item !== e));
     } else {
@@ -89,6 +88,7 @@ const ChempionsList = ({
     if (session?.data) {
       const fetchData = async () => {
         try {
+          console.log(process.env.NEXTAUTH_URL);
           const response = await fetch(
             `${process.env.NEXTAUTH_URL}/api/user/login`,
             {
