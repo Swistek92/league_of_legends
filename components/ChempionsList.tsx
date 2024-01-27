@@ -56,7 +56,7 @@ const ChempionsList = ({
     data!.stared = stared;
     console.log("data", data);
     try {
-      const response = await fetch("http://localhost:3000/api/user/", {
+      const response = await fetch(`${process.env.NEXTAUTH_URL}/api/user/`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -89,13 +89,16 @@ const ChempionsList = ({
     if (session?.data) {
       const fetchData = async () => {
         try {
-          const response = await fetch("http://localhost:3000/api/user/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(session.data.user),
-          });
+          const response = await fetch(
+            `${process.env.NEXTAUTH_URL}/api/user/login`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(session.data.user),
+            }
+          );
           const { user }: { user: UserDocument } = await response.json();
 
           setUser(user);
@@ -112,7 +115,6 @@ const ChempionsList = ({
 
       fetchData();
       console.log("stared", stared);
-      // console.log("userdata effect ", data);
     }
   }, [select, filterValue, champions, session]);
 
