@@ -40,7 +40,7 @@ const ChempionsList = ({
 
   const handleStared = (e: string) => {
     if (!session.data?.user) {
-      return signIn("github", { callbackUrl: `${process.env.NEXTAUTH_URL}` });
+      return signIn();
     }
     if (stared.includes(e)) {
       setStared(stared.filter((item) => item !== e));
