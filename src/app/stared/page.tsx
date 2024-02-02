@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const page = async () => {
   const session = await getServerSession(options);
-  
 
   if (!session) {
     return (
@@ -19,7 +18,7 @@ const page = async () => {
 
   return (
     <div>
-      STARED CHEMPIONS
+      {}
       <p>name</p>
       <p> {session.user?.name}</p>
       <Image src={session.user!.image!} alt='asd' width={200} height={200} />

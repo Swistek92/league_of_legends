@@ -1,4 +1,4 @@
 import ChampionsType from "./Chempions";
 import ChempionType from "./Chempion";
-
-export type { ChampionsType, ChempionType };
+import { UserDocument } from "./UserInterface";
+export type { ChampionsType, ChempionType, UserDocument };

@@ -1,11 +1,5 @@
 import mongoose, { Schema, model, Document } from "mongoose";
-
-export interface UserDocument extends Document {
-  name: string;
-  email: string;
-  image?: string;
-  stared?: string[];
-}
+import { UserDocument } from "../types";
 
 const userSchema = new Schema<UserDocument>({
   name: { type: String, required: [true, "please add your name"] },

@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Aplikacja Bohaterowie League of Legends
 
-## Getting Started
+## Opis
+**Aplikacja Bohaterowie League of Legends** to twoje ultymatywne narzędzie do poznawania i zarządzania ulubionymi bohaterami z gry League of Legends. Dzięki tej aplikacji możesz łatwo przeglądać szczegółowe opisy każdego z bohaterów, a także zapisywać swoje ulubione postacie w osobistej bazie danych.
 
-First, run the development server:
+## Funkcje
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Przeglądaj Bohaterów**: Odkrywaj i ucz się o każdym bohaterze w grze. Przeglądaj ich historię, umiejętności, statystyki i wiele więcej.
+- **Zapisz Ulubione Postacie**: Wybierz i zapisz swoje ulubione postacie w bazie danych. Twórz własną listę najlepszych bohaterów, do których możesz łatwo wrócić w dowolnym momencie.
+- **Integracja z MongoDB**: Twoje ulubione postacie są zapisywane bezpiecznie w bazie danych MongoDB, zapewniając łatwy dostęp i synchronizację między urządzeniami.
+- **Logowanie przez GitHub**: Bezpieczne i szybkie logowanie dzięki integracji z kontem GitHub. Wszystkie Twoje dane są chronione i dostępne tylko dla Ciebie.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Jak Zacząć
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Zainstaluj Aplikację**: Pobierz aplikację na swoje urządzenie.
+2. **Zaloguj się przez GitHub**: Użyj swojego konta GitHub, aby zalogować się do aplikacji.
+3. **Przeglądaj i Zapisuj Bohaterów**: Zacznij przeglądać bohaterów i zapisuj swoich ulubionych do swojej osobistej bazy danych.
+4. **Ciesz się Dostępem Wszędzie**: Dzięki integracji z MongoDB, Twoje ulubione postacie są dostępne na każdym urządzeniu, na którym jesteś zalogowany.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Wsparcie
 
-## Learn More
+Masz pytania lub potrzebujesz pomocy? Skontaktuj się z nami przez [nasza strona wsparcia](#).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+*Aplikacja Bohaterowie League of Legends nie jest powiązana z oficjalną grą League of Legends ani Riot Games.*
