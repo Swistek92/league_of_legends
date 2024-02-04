@@ -4,6 +4,8 @@ import { UserDocument } from "../../types";
 import { options } from "./api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default async function Home() {
   /////////// CHEMPIONS
   const allChempions: string = "All";
