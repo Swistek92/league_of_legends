@@ -1,4 +1,5 @@
-import { UserDocument } from "./../models/user.model";
+import { UserDocument } from "./../types/UserInterface";
+
 import UserModel from "../models/user.model";
 import { FilterQuery } from "mongoose";
 
@@ -12,9 +13,14 @@ const UserService = {
   getAllUsers: async () => {
     return UserModel.find();
   },
-  addStared: async(name: string)=>{
-    
-  }
+
+  updateStared: async (email: string, staredChampions: string[]) => {
+    return UserModel.findOneAndUpdate(
+      { email: email },
+      { $set: { stared: staredChampions } },
+      { new: true }
+    );
+  },
 };
 
 export default UserService;

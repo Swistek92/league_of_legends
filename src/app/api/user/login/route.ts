@@ -1,6 +1,6 @@
+import { UserDocument } from "./../../../../../types/UserInterface";
 import { NextResponse } from "next/server";
 import connectMongoDb from "../../../../../helpers/connectMongoDB";
-import { UserDocument } from "../../../../../models/user.model";
 import UserService from "../../../../../service/user.service";
 
 export const maxDuration = 5;
