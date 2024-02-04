@@ -25,6 +25,8 @@ const page = async () => {
     }
   };
   if (winningMsg) {
+    localStorage.removeItem("war");
+
     return <div>{winningMsg}</div>;
   }
   return (
