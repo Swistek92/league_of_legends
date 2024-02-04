@@ -26,7 +26,6 @@ export class ChampionManager {
     const keys = Object.keys(inputObject);
     const resultArray = keys.map((key) => {
       const championData = inputObject[key];
-      // Dodajemy początkową wartość stared jako false
       return { stared: false, ...championData };
     });
     return resultArray;
@@ -46,5 +45,15 @@ export class ChampionManager {
         champion.stared = true;
       }
     });
+  };
+  public getStaredChampions = (championNames: string[]): ChampionsType[] => {
+    return this.champions.filter((champion) =>
+      championNames.includes(champion.name)
+    );
+  };
+  public getWarChampions = (championNames: string[]): ChampionsType[] => {
+    return this.champions.filter((champion) =>
+      championNames.includes(champion.name)
+    );
   };
 }

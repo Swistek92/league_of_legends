@@ -1,8 +1,9 @@
 import { ChempionsList } from "../../components";
 import { ChampionManager } from "../../helpers";
-import { UserDocument } from "../../models/user.model";
+import { UserDocument } from "../../types";
 import { options } from "./api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
+import { ToastContainer, toast } from "react-toastify";
 export default async function Home() {
   /////////// CHEMPIONS
   const allChempions: string = "All";
@@ -19,6 +20,7 @@ export default async function Home() {
     <main className='w-full overflow-hidden bg-red-100   '>
       <div>
         <ChempionsList tags={tags} champions={chempions} />
+        <ToastContainer />
       </div>
     </main>
   );

@@ -17,17 +17,22 @@ const Navigation = () => {
     <div>
       <ul className='flex justify-around bg-red-400 fixed bottom-0 w-full h-10 items-center'>
         <li>
-          <Link className=' p-3' href={"/"}>
+          <Link className=' p-2 border-4 border-indigo-500 ' href={"/"}>
             home
           </Link>
         </li>
         <li>
-          <Link className='p-3' href={"/stared"}>
+          <Link className='p-2 border-4 border-indigo-500' href={"/stared"}>
             stared
           </Link>
         </li>
         <li>
-          <Link className='p-3' href={"/account"}>
+          <Link className='p-2 border-4 border-indigo-500' href={"/war"}>
+            War
+          </Link>
+        </li>
+        <li>
+          <Link className='p-2 border-4 border-indigo-500' href={"/account"}>
             MyAccount
           </Link>
         </li>
