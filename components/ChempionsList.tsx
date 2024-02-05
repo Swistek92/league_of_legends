@@ -67,6 +67,7 @@ const ChempionsList = ({
     }
     setStared(updatedStared);
     try {
+      notify2();
       await sendData();
     } catch (error) {}
   };
@@ -83,7 +84,7 @@ const ChempionsList = ({
         },
         body: JSON.stringify(data),
       });
-      notify2(), console.log("response" + JSON.stringify(response));
+      // notify2(), console.log("response" + JSON.stringify(response));
     } catch (error) {
       notify3();
       console.log(error);
