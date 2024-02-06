@@ -115,9 +115,9 @@ const ChempionsList = ({
     if (session?.data) {
       const fetchData = async () => {
         try {
-          console.log(process.env.NEXTAUTH_URL);
+          console.log("NEXTAUTH_URL" + process.env.NEXTAUTH_URL);
           const response = await fetch(
-            `${process.env.NEXTAUTH_URL}/api/user/login`,
+            `https://league-of-legends-homs.vercel.app/api/user/login`,
             {
               method: "POST",
               headers: {
