@@ -152,93 +152,94 @@ const ChempionsList = ({
 
   return (
     <div>
-      <div className='z-30 flex items-center justify-center w-full bg-red-600 fixed top-0 h-10'>
-        <button className='w-full' onClick={() => setShowFilter(!showFilter)}>
-          {!showFilter ? "Show Filter" : "Hide Filter"}
-        </button>
-      </div>
-      {/* filter */}
-      {showFilter && (
-        <div className='fixed top-10 z-30 w-full bg-red-400 p-4'>
-          <div>
-            <h5 className='flex justify-center text-black text-lg font-bold mb-1'>
-              Select type
-            </h5>
-            <select
-              value={select}
-              onChange={handleSelectChange}
-              className='bg-red-300 border border-red-200 text-black text-lg rounded-lg focus:ring-red-300 focus:border-red-500 block w-full p-2 mb-4'
+  <div className='z-30 flex items-center justify-center w-full bg-blue-600 fixed top-0 h-10'>
+    <button className='w-full hover:bg-blue-700' onClick={() => setShowFilter(!showFilter)}>
+      {!showFilter ? "Show Filter" : "Hide Filter"}
+    </button>
+  </div>
+  {/* filter */}
+  {showFilter && (
+    <div className='fixed top-10 z-30 w-full bg-blue-400 p-4'>
+      <div>
+        <h5 className='flex justify-center text-white text-lg font-bold mb-1'>
+          Select type
+        </h5>
+        <select
+          value={select}
+          onChange={handleSelectChange}
+          className='bg-blue-300 border border-blue-200 text-black text-lg rounded-lg focus:ring-blue-300 focus:border-blue-500 block w-full p-2 mb-4'
+        >
+          {tags.map((e) => (
+            <option
+              key={e}
+              value={e}
+              className='bg-blue-300 text-center hover:bg-blue-500'
             >
-              {tags.map((e) => (
-                <option
-                  key={e}
-                  value={e}
-                  className='bg-red-300 text-center hover:bg-red-500'
-                >
-                  {e}
-                </option>
-              ))}
-            </select>
-            <h5 className='flex justify-center text-black text-lg font-bold mb-1'>
-              Search...
-            </h5>
-            <input
-              className='w-full p-2 rounded-lg border bg-red-300 border-red-400 focus:outline-none focus:border-red-500 text-black text-lg'
-              type='text'
-              placeholder='Search...'
-              value={filterValue}
-              onChange={handleFilterChange}
-            />
-          </div>
-        </div>
-      )}
-      {/* filter */}
-
-      <div
-        className={`flex flex-wrap justify-center ${
-          showFilter ? "mt-44" : "mt-20"
-        }`}
-      >
-        {sortedChemp.map((e) => (
-          <div
-            key={e.key}
-            className={`relative w-80 rounded-lg m-3 p-3 flex flex-col items-center ${
-              war.includes(e.name) ? "border-8 border-red-700 " : ""
-            } ${stared.includes(e.name) ? "bg-red-300" : "bg-yellow-700"}`}
-          >
-            <hr />
-            <h1 className='text-4xl'>{e.id}</h1>
-            <Image
-              width={100}
-              height={100}
-              alt='champ'
-              src={`http://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/${e.id}.png`}
-            />
-            {e.tags.map((tag) => (
-              <p key={tag}>{tag}</p>
-            ))}
-            <button
-              onClick={() => handleSetWar(e.name)}
-              className='absolute top-0 right-0 bg-red-400 p-2 rounded-bl-xl rounded-tr-lg hover:bg-yellow-500'
-            >
-              War
-            </button>
-            <button
-              onClick={() => handleStared(e.name)}
-              className='absolute top-0 left-0 bg-yellow-400 p-2 rounded-bl-xl rounded-tr-lg hover:bg-yellow-500'
-            >
-              Star
-            </button>
-            <Link
-              href={`/details/${e.name}`}
-              className='w-full bg-red-500 text-center rounded-2xl hover:bg-red-700 p-2 mt-2 text-white'
-            >
-              Details
-            </Link>
-          </div>
-        ))}
+              {e}
+            </option>
+          ))}
+        </select>
+        <h5 className='flex justify-center text-white text-lg font-bold mb-1'>
+          Search...
+        </h5>
+        <input
+          className='w-full p-2 rounded-lg border bg-blue-300 border-blue-400 focus:outline-none focus:border-blue-500 text-black text-lg'
+          type='text'
+          placeholder='Search...'
+          value={filterValue}
+          onChange={handleFilterChange}
+        />
       </div>
     </div>
+  )}
+  {/* filter */}
+
+  <div
+    className={`flex flex-wrap justify-center ${
+      showFilter ? "mt-44" : "mt-20"
+    }`}
+  >
+    {sortedChemp.map((e) => (
+      <div
+        key={e.key}
+        className={`relative w-80 rounded-lg m-3 p-3 flex flex-col items-center ${
+          war.includes(e.name) ? "border-8 border-blue-700 " : ""
+        } ${stared.includes(e.name) ? "bg-blue-300" : "bg-gray-700"}`}
+      >
+        <hr />
+        <h1 className='text-4xl'>{e.id}</h1>
+        <Image
+          width={100}
+          height={100}
+          alt='champ'
+          src={`http://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/${e.id}.png`}
+        />
+        {e.tags.map((tag) => (
+          <p key={tag}>{tag}</p>
+        ))}
+        <button
+          onClick={() => handleSetWar(e.name)}
+          className='absolute top-0 right-0 bg-blue-400 p-2 rounded-bl-xl rounded-tr-lg hover:bg-gray-500'
+        >
+          War
+        </button>
+        <button
+          onClick={() => handleStared(e.name)}
+          className='absolute top-0 left-0 bg-gray-400 p-2 rounded-bl-xl rounded-tr-lg hover:bg-gray-500'
+        >
+          Star
+        </button>
+        <Link
+          href={`/details/${e.name}`}
+          className='w-full bg-blue-500 text-center rounded-2xl hover:bg-blue-700 p-2 mt-2 text-white'
+        >
+          Details
+        </Link>
+      </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 

@@ -24,7 +24,7 @@ const Page = async () => {
   const chempdata = championManager.getStaredChampions(stared);
 
   if (stared.length < 1) {
-    return <h1>stared some chemp</h1>;
+    return <h1>Stare some champions</h1>;
   }
   return (
     <div className='p-4'>
@@ -32,7 +32,7 @@ const Page = async () => {
         {chempdata.map((champion) => (
           <div
             key={champion.id}
-            className='max-w-sm rounded overflow-hidden shadow-lg bg-white'
+            className='max-w-sm rounded overflow-hidden shadow-lg bg-blue-100'
           >
             <img
               className='w-full'
@@ -40,14 +40,16 @@ const Page = async () => {
               alt={champion.name}
             />
             <div className='px-6 py-4'>
-              <div className='font-bold text-xl mb-2'>{champion.name}</div>
+              <div className='font-bold text-xl mb-2 text-blue-700'>
+                {champion.name}
+              </div>
               <p className='text-gray-700 text-base'>{champion.title}</p>
             </div>
             <div className='px-6 pt-4 pb-2'>
               {champion.tags.map((tag) => (
                 <span
                   key={tag}
-                  className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
+                  className='inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2 mb-2'
                 >
                   {tag}
                 </span>
