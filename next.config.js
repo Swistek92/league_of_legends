@@ -5,6 +5,7 @@ const nextConfig = {
   },
   env: {
     ALL_CHEMPIONS: "All",
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
   compiler: {
     styledComponents: true,
