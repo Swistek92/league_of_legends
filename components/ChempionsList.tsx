@@ -77,13 +77,17 @@ const ChempionsList = ({
     data!.stared = stared;
     try {
       notify1();
-      const response = await fetch(`${process.env.NEXTAUTH_URL}/api/user/`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      // const response = await fetch(`${process.env.NEXTAUTH_URL}/api/user/`, {
+      const response = await fetch(
+        `https://league-of-legends-homs.vercel.app/api/user/`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       // notify2(), console.log("response" + JSON.stringify(response));
     } catch (error) {
       notify3();
