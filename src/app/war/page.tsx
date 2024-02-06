@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChampionManager, useLocalStorage } from "../../../helpers";
+import Link from "next/link";
 
 const Page = async () => {
   const [war, setWar] = useLocalStorage<string[]>("war", []);
@@ -81,7 +82,9 @@ const Page = async () => {
           </div>
         ) : (
           <div className='text-center mt-4 text-xl text-red-400'>
-            Proszę wybrać dwóch championów do walki
+            <Link href='/ '>
+              <p> Proszę wybrać dwóch championów do walki</p>
+            </Link>
           </div>
         )}
       </>
