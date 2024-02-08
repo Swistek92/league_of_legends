@@ -26,13 +26,23 @@ const Page = () => {
     fetchData();
   }, [war]);
 
-  const handleIncreseLevel = (index: number) => {
+  const handleIncreaseLevel = (index: number) => {
     if (index === 0) {
       if (levelFirstChampion === 18) return;
       setlevelFirstChampion(levelFirstChampion + 1);
     } else {
       if (levelSecondChampion === 18) return;
       setlevelSecondChampion(levelSecondChampion + 1);
+    }
+  };
+
+  const handleDecreaselevel = (index: number) => {
+    if (index === 0) {
+      if (levelFirstChampion === 1) return;
+      setlevelFirstChampion(levelFirstChampion - 1);
+    } else {
+      if (levelSecondChampion === 1) return;
+      setlevelSecondChampion(levelSecondChampion - 1);
     }
   };
 
@@ -154,15 +164,26 @@ const Page = () => {
                 <div>
                   <div className='flex justify-between'>
                     <button
-                      onClick={() => handleIncreseLevel(index)}
-                      className='bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline mr-2'
+                      onClick={() => handleIncreaseLevel(index)}
+                      disabled={levelFirstChampion === 18}
+                      className={`bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline mr-2 ${
+                        levelFirstChampion === 18 &&
+                        "opacity-50 cursor-not-allowed"
+                      }`}
                     >
                       lvl up
                     </button>
                     <div className='text-white font-semibold mr-2'>
                       lvl {levelFirstChampion}
                     </div>
-                    <button className='bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline'>
+                    <button
+                      onClick={() => handleDecreaselevel(index)}
+                      disabled={levelFirstChampion === 1}
+                      className={`bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline ${
+                        levelFirstChampion === 1 &&
+                        "opacity-50 cursor-not-allowed"
+                      }`}
+                    >
                       lvl down
                     </button>
                   </div>
@@ -182,14 +203,25 @@ const Page = () => {
                 <div>
                   <div className='flex justify-between'>
                     <button
-                      onClick={() => handleIncreseLevel(index)}
-                      className='bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline mr-2'
+                      onClick={() => handleIncreaseLevel(index)}
+                      disabled={levelSecondChampion === 18}
+                      className={`bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline mr-2 ${
+                        levelSecondChampion === 18 &&
+                        "opacity-50 cursor-not-allowed"
+                      }`}
                     >
                       lvl up
                     </button>
                     <div> {levelSecondChampion}</div>
 
-                    <button className='bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline'>
+                    <button
+                      onClick={() => handleDecreaselevel(index)}
+                      disabled={levelSecondChampion === 1}
+                      className={`bg-blue-400 hover:bg-blue-500 text-white font-semibold py-1 px-3 rounded focus:outline-none focus:shadow-outline ${
+                        levelSecondChampion === 1 &&
+                        "opacity-50 cursor-not-allowed"
+                      }`}
+                    >
                       lvl down
                     </button>
                   </div>
