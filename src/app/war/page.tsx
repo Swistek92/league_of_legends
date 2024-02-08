@@ -48,14 +48,14 @@ const Page = () => {
 
   const onWar = () => {
     const {
-      attack: attackFirstChampion,
-      defense: defenseFirstChampion,
-      magic: magicFirstChampion,
+      attack: attackFirstChampion = 26,
+      defense: defenseFirstChampion = 12,
+      magic: magicFirstChampion = 43,
     } = chempdata[0].info;
     const {
-      attack: attackSecondChampion,
-      defense: defenseSecondChampion,
-      magic: magicSecondChampion,
+      attack: attackSecondChampion = 41,
+      defense: defenseSecondChampion = 22,
+      magic: magicSecondChampion = 10,
     } = chempdata[1].info;
 
     const value1 =
@@ -70,7 +70,6 @@ const Page = () => {
     if (value1 === value2) {
       localStorage.removeItem("war");
       setWinData(undefined);
-
       setWinningMsg("Draw");
     } else if (value1 > value2) {
       localStorage.removeItem("war");
